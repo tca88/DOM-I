@@ -40,3 +40,28 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// let headerNavClass = document.getElementsByTagName('nav')[0];
+// headerNavClass.classList.add('header-nav');
+// // console.log(headerNavClass.classList);
+
+// ADD NAV ITEMS TO A TAGS//
+// first, need to create an array containing nav items.
+// loop through the array and set the corresponding text to each nav link. 
+const navItems = ["Services", "Product", "Vision", "Features", "About", "Contact"];
+const listItems = document.querySelectorAll('nav a');
+
+listItems.forEach((item, i) => {
+  item.textContent = navItems[i];
+});
+
+// ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
+const ctaHeading = document.querySelector('.cta .cta-text h1');
+// console.log(ctaHeading);
+ctaHeading.textContent = siteContent["cta"]["h1"];
+
+const ctaButton = document.querySelector('.cta .cta-text button');
+ctaButton.textContent = siteContent["cta"]["button"];
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
