@@ -48,7 +48,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // ADD NAV ITEMS TO A TAGS//
 // first, need to create an array containing nav items.
 // loop through the array and set the corresponding text to each nav link. 
-const navItems = ["Services", "Product", "Vision", "Features", "About", "Contact"];
+let navItems = Object.keys(siteContent["nav"]).map(function(k) {
+  return siteContent["nav"][k];
+});
+navItems.pop();
+console.log(navItems);
 const listItems = document.querySelectorAll('nav a');
 
 listItems.forEach((item, i) => {
@@ -63,5 +67,24 @@ ctaHeading.textContent = siteContent["cta"]["h1"];
 const ctaButton = document.querySelector('.cta .cta-text button');
 ctaButton.textContent = siteContent["cta"]["button"];
 
-let ctaImg = document.getElementById("cta-img");
+const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const mainContent = document.querySelectorAll(".main-content .top-content .text-content");
+// console.log(mainContent);
+
+
+// ADD FEATURES AND ABOUT CONTENT//
+const featuresContent = mainContent[0];
+featuresContent.classList.add('features-content');
+const featuresContentHeading = document.querySelector('.text-content.features-content h4');
+featuresContentHeading.textContent = siteContent["main-content"]["features-h4"];
+const featuresContentText = document.querySelector('.text-content.features-content p');
+featuresContentText.textContent = siteContent["main-content"]["features-content"];
+
+const aboutContent = mainContent[1];
+aboutContent.classList.add('about-content');
+const aboutContentHeading = document.querySelector('.text-content.about-content h4');
+aboutContentHeading.textContent = siteContent["main-content"]["about-h4"];
+const aboutContentText = document.querySelector('.text-content.about-content p');
+aboutContentText.textContent = siteContent["main-content"]["about-content"];
