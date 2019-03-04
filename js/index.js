@@ -88,3 +88,7 @@ const aboutContentHeading = document.querySelector('.text-content.about-content 
 aboutContentHeading.textContent = siteContent["main-content"]["about-h4"];
 const aboutContentText = document.querySelector('.text-content.about-content p');
 aboutContentText.textContent = siteContent["main-content"]["about-content"];
+
+// ADD MAIN CONTENT MIDDLE IMAGE//
+const mainMiddleImg= document.getElementById("middle-img");
+mainMiddleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
