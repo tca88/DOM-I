@@ -52,7 +52,7 @@ let navItems = Object.keys(siteContent["nav"]).map(function(k) {
   return siteContent["nav"][k];
 });
 navItems.pop();
-console.log(navItems);
+// console.log(navItems);
 const listItems = document.querySelectorAll('nav a');
 
 listItems.forEach((item, i) => {
@@ -70,19 +70,20 @@ ctaButton.textContent = siteContent["cta"]["button"];
 const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-const mainContent = document.querySelectorAll(".main-content .top-content .text-content");
-// console.log(mainContent);
 
 
-// ADD FEATURES AND ABOUT CONTENT//
-const featuresContent = mainContent[0];
+// TOP CONTENT: ADD FEATURES AND ABOUT CONTENT//
+const topContent = document.querySelectorAll(".main-content .top-content .text-content");
+// console.log(topContent);
+
+const featuresContent = topContent[0];
 featuresContent.classList.add('features-content');
 const featuresContentHeading = document.querySelector('.text-content.features-content h4');
 featuresContentHeading.textContent = siteContent["main-content"]["features-h4"];
 const featuresContentText = document.querySelector('.text-content.features-content p');
 featuresContentText.textContent = siteContent["main-content"]["features-content"];
 
-const aboutContent = mainContent[1];
+const aboutContent = topContent[1];
 aboutContent.classList.add('about-content');
 const aboutContentHeading = document.querySelector('.text-content.about-content h4');
 aboutContentHeading.textContent = siteContent["main-content"]["about-h4"];
@@ -92,3 +93,28 @@ aboutContentText.textContent = siteContent["main-content"]["about-content"];
 // ADD MAIN CONTENT MIDDLE IMAGE//
 const mainMiddleImg= document.getElementById("middle-img");
 mainMiddleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// BOTTOM CONTENT: ADD SERVICES, PRODUCT AND VISION CONTENT//
+const bottomContent = document.querySelectorAll(".main-content .bottom-content .text-content");
+// console.log(bottomContent);
+
+const servicesContent = bottomContent[0];
+servicesContent.classList.add('services-content');
+const servicesContentHeading = document.querySelector('.text-content.services-content h4');
+servicesContentHeading.textContent = siteContent["main-content"]["services-h4"];
+const servicesContentText = document.querySelector('.text-content.services-content p');
+servicesContentText.textContent = siteContent["main-content"]["services-content"];
+
+const productContent = bottomContent[1];
+productContent.classList.add('product-content');
+const productContentHeading = document.querySelector('.text-content.product-content h4');
+productContentHeading.textContent = siteContent["main-content"]["product-h4"];
+const productContentText = document.querySelector('.text-content.product-content p');
+productContentText.textContent = siteContent["main-content"]["product-content"];
+
+const visionContent = bottomContent[2];
+visionContent.classList.add('vision-content');
+const visionContentHeading = document.querySelector('.text-content.vision-content h4');
+visionContentHeading.textContent = siteContent["main-content"]["vision-h4"];
+const visionContentText = document.querySelector('.text-content.vision-content p');
+visionContentText.textContent = siteContent["main-content"]["vision-content"];
