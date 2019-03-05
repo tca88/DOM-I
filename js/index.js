@@ -56,6 +56,11 @@ navItems.pop();
 const nav = document.querySelector('nav');
 const listItems = document.querySelectorAll('nav a');
 
+listItems.forEach((item, i) => {
+  item.textContent = navItems[i];
+  item.style.color = 'green';
+});
+
 const additionalNavLinks = ["Home", "Blog"];
 additionalNavLinks.forEach((navLink, i) => {
   const navLinks = document.createElement('a');
@@ -65,10 +70,6 @@ additionalNavLinks.forEach((navLink, i) => {
   return i === 0 ? nav.prepend(navLinks) : nav.appendChild(navLinks);
 });
 
-listItems.forEach((item, i) => {
-  item.textContent = navItems[i];
-  item.style.color = 'green';
-});
 
 // ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
 const ctaHeading = document.querySelector('.cta .cta-text h1');
