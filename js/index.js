@@ -58,11 +58,11 @@ const listItems = document.querySelectorAll('nav a');
 
 const additionalNavLinks = ["Home", "Blog"];
 additionalNavLinks.forEach((navLink, i) => {
-  const navItem = document.createElement('a');
-  navItem.setAttribute('href', '#');
-  navItem.style.color = 'green';
-  navItem.textContent = navLink;
-  return i === 0 ? nav.prepend(navItem) : nav.appendChild(navItem);
+  const navLinks = document.createElement('a');
+  navLinks.setAttribute('href', '#');
+  navLinks.style.color = 'green';
+  navLinks.textContent = navLink;
+  return i === 0 ? nav.prepend(navLinks) : nav.appendChild(navLinks);
 });
 
 listItems.forEach((item, i) => {
