@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -53,10 +53,21 @@ let navItems = Object.keys(siteContent["nav"]).map(function(k) {
 });
 navItems.pop();
 // console.log(navItems);
+const nav = document.querySelector('nav');
 const listItems = document.querySelectorAll('nav a');
+
+const additionalNavLinks = ["Home", "Blog"];
+additionalNavLinks.forEach((navLink, i) => {
+  const navItem = document.createElement('a');
+  navItem.setAttribute('href', '#');
+  navItem.style.color = '#2766B9';
+  navItem.textContent = navLink;
+  return i === 0 ? nav.prepend(navItem) : nav.appendChild(navItem);
+});
 
 listItems.forEach((item, i) => {
   item.textContent = navItems[i];
+  item.style.color = '#2766B9';
 });
 
 // ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
@@ -123,6 +134,14 @@ visionContentText.textContent = siteContent["main-content"]["vision-content"];
 const contactHeading = document.querySelector('.contact h4');
 contactHeading.textContent = siteContent["contact"]["contact-h4"];
 const contactInfo = document.querySelectorAll('.contact p');
-contactInfo[0].textContent = siteContent["contact"]["address"];
+
+contactInfo[0].innerHTML = new DOMParser().parseFromString(siteContent["contact"]["address"], "text/html").body.innerHTML;
+// console.log(contactInfo[0]);
+// const info = contactInfo[0].firstChild.splitText(19);
+// console.log(info);
 contactInfo[1].textContent = siteContent["contact"]["phone"];
 contactInfo[2].textContent = siteContent["contact"]["email"];
+
+// FOOTER CONTENT//
+const footerContent = document.querySelector('footer p');
+footerContent.textContent = siteContent["footer"]["copyright"];
