@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -73,7 +73,7 @@ listItems.forEach((item, i) => {
 // ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
 const ctaHeading = document.querySelector('.cta .cta-text h1');
 // console.log(ctaHeading);
-ctaHeading.textContent = siteContent["cta"]["h1"];
+ctaHeading.innerHTML = new DOMParser().parseFromString(siteContent["cta"]["h1"], "text/html").body.innerHTML;
 
 const ctaButton = document.querySelector('.cta .cta-text button');
 ctaButton.textContent = siteContent["cta"]["button"];
