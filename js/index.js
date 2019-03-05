@@ -60,14 +60,14 @@ const additionalNavLinks = ["Home", "Blog"];
 additionalNavLinks.forEach((navLink, i) => {
   const navItem = document.createElement('a');
   navItem.setAttribute('href', '#');
-  navItem.style.color = '#2766B9';
+  navItem.style.color = 'green';
   navItem.textContent = navLink;
   return i === 0 ? nav.prepend(navItem) : nav.appendChild(navItem);
 });
 
 listItems.forEach((item, i) => {
   item.textContent = navItems[i];
-  item.style.color = '#2766B9';
+  item.style.color = 'green';
 });
 
 // ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
