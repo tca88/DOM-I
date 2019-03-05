@@ -74,7 +74,8 @@ additionalNavLinks.forEach((navLink, i) => {
 // ADD CTA ITEMS (HEADING, BUTTON AND IMAGE) TO CTA SECTION//
 const ctaHeading = document.querySelector('.cta .cta-text h1');
 // console.log(ctaHeading);
-ctaHeading.innerHTML = new DOMParser().parseFromString(siteContent["cta"]["h1"], "text/html").body.innerHTML;
+ctaHeading.innerHTML = siteContent["cta"]["h1"];
+// ctaHeading.innerHTML = new DOMParser().parseFromString(siteContent["cta"]["h1"], "text/html").body.innerHTML;
 
 const ctaButton = document.querySelector('.cta .cta-text button');
 ctaButton.textContent = siteContent["cta"]["button"];
@@ -136,7 +137,8 @@ const contactHeading = document.querySelector('.contact h4');
 contactHeading.textContent = siteContent["contact"]["contact-h4"];
 const contactInfo = document.querySelectorAll('.contact p');
 
-contactInfo[0].innerHTML = new DOMParser().parseFromString(siteContent["contact"]["address"], "text/html").body.innerHTML;
+contactInfo[0].innerHTML = siteContent["contact"]["address"];
+// contactInfo[0].innerHTML = new DOMParser().parseFromString(siteContent["contact"]["address"], "text/html").body.innerHTML;
 // console.log(contactInfo[0]);
 // const info = contactInfo[0].firstChild.splitText(19);
 // console.log(info);
